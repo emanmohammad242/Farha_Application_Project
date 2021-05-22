@@ -9,19 +9,23 @@ public class product {
     private int productToken;
     private String productSize;
     private String productImageId;
+    private String productImageId2;
+    private String productImageId3;
     private String category ;
 
     public product() { }
 
-    public product(int id ,String productName, String productPric, String productColor, int productToken, String productSize, String productImageId ,String category) {
-        this.id=id;
+    public product(int id, String productName, String productPric, String productColor, int productToken, String productSize, String productImageId, String productImageId2, String productImageId3, String category) {
+        this.id = id;
         this.productName = productName;
         this.productPric = productPric;
         this.productColor = productColor;
         this.productToken = productToken;
         this.productSize = productSize;
         this.productImageId = productImageId;
-        this.category=category;
+        this.productImageId2 = productImageId2;
+        this.productImageId3 = productImageId3;
+        this.category = category;
     }
 
     public int getId() {
@@ -76,6 +80,22 @@ public class product {
         return productImageId;
     }
 
+    public String getProductImageId2() {
+        return productImageId2;
+    }
+
+    public void setProductImageId2(String productImageId2) {
+        this.productImageId2 = productImageId2;
+    }
+
+    public String getProductImageId3() {
+        return productImageId3;
+    }
+
+    public void setProductImageId3(String productImageId3) {
+        this.productImageId3 = productImageId3;
+    }
+
     public void setProductImageId(String productImageId) {
         this.productImageId = productImageId;
     }
@@ -93,11 +113,13 @@ public class product {
         return "product{" +
                 "id=" + id +
                 ", productName='" + productName + '\'' +
-                ", productPric='" + productPric + '\'' +
+                ", productPrice='" + productPric + '\'' +
                 ", productColor='" + productColor + '\'' +
                 ", productToken=" + productToken +
-                ", productSize=" + productSize +
+                ", productSize='" + productSize + '\'' +
                 ", productImageId='" + productImageId + '\'' +
+                ", productImageId2='" + productImageId2 + '\'' +
+                ", productImageId3='" + productImageId3 + '\'' +
                 ", category='" + category + '\'' +
                 '}';
     }

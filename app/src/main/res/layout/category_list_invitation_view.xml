@@ -3,17 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
+    android:layout_height="207dp"
     android:layout_margin="20dp"
-    app:cardMaxElevation="5dp"
     app:cardCornerRadius="8dp"
-    >
+    app:cardMaxElevation="5dp">
 
     <LinearLayout
         android:id="@+id/mainLayout"
 
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="207dp"
         android:background="#3A3D49"
         android:orientation="vertical"
         android:padding="15dp"
@@ -26,19 +25,19 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="332dp"
-            android:layout_height="192dp"
+            android:layout_width="match_parent"
+            android:layout_height="117dp"
             android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/text"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:fontFamily="@font/baloo_bhai"
+            android:layout_height="66dp"
+            android:fontFamily="sans-serif-medium"
             android:gravity="center_horizontal"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 

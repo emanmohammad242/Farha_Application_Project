@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.farha_application.Acticites.Admin.ProductListActivity;
+import com.example.farha_application.Acticites.Invitation.ProductInvitationActivity;
 import com.example.farha_application.Models.category;
 import com.example.farha_application.R;
 import com.squareup.picasso.Picasso;
@@ -53,7 +54,7 @@ public class Adapter_CategoryListInvitation extends RecyclerView.Adapter<Adapter
             @Override
             public void onClick(View v) {
 
-                Intent intent =new Intent(context, ProductListActivity.class);
+                Intent intent =new Intent(context, ProductInvitationActivity.class);
                 intent.putExtra("cat",cat.getName_cat());
                 context.startActivity(intent);
 

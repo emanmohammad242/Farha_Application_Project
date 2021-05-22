@@ -52,7 +52,7 @@ public class ProductListActivity extends AppCompatActivity {
         }
 
         productList = new ArrayList<>();
-        recyclerView=findViewById(R.id.pro);
+        recyclerView=findViewById(R.id.recyclerView);
     }
     private InputStream OpenHttpConnection(String urlString) throws IOException {
         InputStream in = null;
@@ -131,13 +131,15 @@ public class ProductListActivity extends AppCompatActivity {
 
                         int id = Integer.parseInt(objects[0]);
                         String proName=objects[1];
-                        String proPric=objects[2];
+                        String proPrice=objects[2];
                         String proColor=objects[3];
                         int proToken = Integer.parseInt(objects[4]);
                         String proSize = objects[5];
                         String proImageId = objects[6];
-                        String category = objects[7];
-                        pro=new product(id ,proName,proPric,proColor,proToken,proSize,proImageId,category);
+                        String proImageId2 = objects[7];
+                        String proImageId3 = objects[8];
+                        String category = objects[9];
+                        pro=new product(id ,proName,proPrice,proColor,proToken,proSize,proImageId,proImageId2,proImageId3,category);
                         productList.add(pro);
                     }
                 }

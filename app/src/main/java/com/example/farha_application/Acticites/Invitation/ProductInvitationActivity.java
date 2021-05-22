@@ -8,18 +8,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 
 import com.example.farha_application.Acticites.Admin.CategoryListActivity;
-import com.example.farha_application.Adapters.Adapter_CategoryList;
-import com.example.farha_application.Adapters.Adapter_CategoryListInvitation;
-import com.example.farha_application.Models.category;
+import com.example.farha_application.Acticites.Admin.InsertProductActivity;
+import com.example.farha_application.Adapters.Adapter_ProductList;
+import com.example.farha_application.Adapters.Adapter_ProductListInvitation;
+import com.example.farha_application.Models.product;
 import com.example.farha_application.R;
 
 import java.io.IOException;
@@ -31,19 +34,21 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoeyListInvetationActivity extends AppCompatActivity {
+public class ProductInvitationActivity extends AppCompatActivity {
 
-    List<category> categoryList;
+    List<product> productList;
     RecyclerView recyclerView;
+    String cat="";
+    Adapter_ProductListInvitation adapter;
     public EditText searchView;
-    Adapter_CategoryListInvitation adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categoey_list_invetation);
+        setContentView(R.layout.activity_product_list_invitation);
 
-        String url = "http://192.168.1.114:84/rest/getCategory.php";
+        cat=getIntent().getStringExtra("cat");
+
+        String url = "http://192.168.1.114:84/rest/getProduct.php?cat="+cat;
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -53,11 +58,11 @@ public class CategoeyListInvetationActivity extends AppCompatActivity {
                     123);
 
         } else {
-            CategoeyListInvetationActivity.DownloadTextTask runner = new DownloadTextTask();
+            ProductInvitationActivity.DownloadTextTask runner = new DownloadTextTask();
             runner.execute(url);
         }
 
-        categoryList = new ArrayList<>();
+        productList = new ArrayList<>();
         recyclerView=findViewById(R.id.recyclerView);
         searchView = findViewById(R.id.searchView);
 
@@ -77,15 +82,14 @@ public class CategoeyListInvetationActivity extends AppCompatActivity {
                 filter(s.toString());
             }
         });
-
-
     }
 
     private void filter(String text) {
-        ArrayList<category> filterList = new ArrayList<>();
-        for (category item : categoryList)
+
+        ArrayList<product> filterList = new ArrayList<>();
+        for (product item : productList)
         {
-            if (item.getName_cat().toLowerCase().contains(text.toLowerCase()))
+            if (item.getProductName().toLowerCase().contains(text.toLowerCase()))
             {
                 filterList.add(item);
             }
@@ -148,7 +152,6 @@ public class CategoeyListInvetationActivity extends AppCompatActivity {
         }
         return str;
     }
-
     private class DownloadTextTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... strings) {
@@ -160,29 +163,46 @@ public class CategoeyListInvetationActivity extends AppCompatActivity {
 
 
             String obj[] = s.split("////");
-            category cat;
+            product pro;
             for(int i=0 ; i<obj.length ; i++)
             {
 
                 if(! obj[i].equals(null)) {
-                    String objects[] = obj[i].split(",,");
+                    String objects[] = obj[i].split(",");
 
                     if(!objects.equals(null)) {
+
+
                         int id = Integer.parseInt(objects[0]);
-                        String name = objects[1];
-                        String image = objects[2];
-                        int num_pro = Integer.parseInt(objects[3]);
-                        cat = new category(id,name, image, num_pro);
-                        categoryList.add(cat);
+                        String proName=objects[1];
+                        String proPrice=objects[2];
+                        String proColor=objects[3];
+                        int proToken = Integer.parseInt(objects[4]);
+                        String proSize = objects[5];
+                        String proImageId = objects[6];
+                        String proImageId2 = objects[7];
+                        String proImageId3 = objects[8];
+                        String category = objects[9];
+                        pro=new product(id ,proName,proPrice,proColor,proToken,proSize,proImageId,proImageId2,proImageId3,category);
+                        productList.add(pro);;
                     }
                 }
             }
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(CategoeyListInvetationActivity.this,2,GridLayoutManager.VERTICAL,false);
+            GridLayoutManager gridLayoutManager = new GridLayoutManager(ProductInvitationActivity.this,2,GridLayoutManager.VERTICAL,false);
             recyclerView.setLayoutManager(gridLayoutManager );
-            adapter = new Adapter_CategoryListInvitation(CategoeyListInvetationActivity.this, categoryList);
+            adapter = new Adapter_ProductListInvitation(ProductInvitationActivity.this, productList);
             recyclerView.setAdapter(adapter);
 
         }
 
+    }
+
+    public void insert_btn_OnClick(View view){
+        Intent intent =new Intent(this, InsertProductActivity.class);
+        startActivity(intent);
+    }
+    public void back_btn_OnClick(View view){
+        Intent intent = new Intent(this, CategoryListActivity.class);
+        startActivity(intent);
     }
 }
