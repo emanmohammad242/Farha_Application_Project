@@ -54,7 +54,7 @@ public class EditProductActivity extends AppCompatActivity {
     }
     public void upDate_btn_OnClick(View view){
 
-        String restUrl = "http://192.168.1.114:84/rest/upDateProduct.php";
+        String restUrl = "http://172.19.29.67:84/rest/upDateProduct.php";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {

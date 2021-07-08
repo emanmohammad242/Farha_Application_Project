@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Acticites.Invitation.DescriptionActivity">
+
+    <Button
+        android:id="@+id/show_gift"
+        android:layout_width="104dp"
+        android:layout_height="98dp"
+        android:background="@drawable/cicle"
+        android:onClick="show_gift_OnClick"
+        android:text="Show Gift"
+        app:backgroundTint="#E5B7D2"
+        app:iconGravity="start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.996" />
+
+    <Button
+        android:id="@+id/back_to_list_invitation"
+        android:layout_width="69dp"
+        android:layout_height="41dp"
+        android:background="#00FFFFFF"
+        android:drawableLeft="@mipmap/ic_launcher_back"
+        android:foreground="?android:selectableItemBackground"
+        android:textSize="30sp"
+        app:backgroundTint="#00FFFFFF"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="399dp"
+        android:layout_height="239dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121"
+        app:srcCompat="@drawable/whatsapp_image_2021_06_27_at_11_33_5"
+        tools:srcCompat="@drawable/whatsapp_image_2021_06_27_at_11_33_5" />
+
+    <TextView
+        android:id="@+id/dec_text"
+        android:layout_width="361dp"
+        android:layout_height="153dp"
+        android:fontFamily="@font/amaranth"
+        android:text="We invite you to attend our wedding, which will be held in the flower hall, at eight in the evening, on the fourth of June.  We attach what our little house lacks in gifts, very happy to help you build a family
+                              Save The Date 21-12-2021."
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.539" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="191dp"
+        android:layout_height="170dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.848"
+        app:srcCompat="@drawable/farha" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

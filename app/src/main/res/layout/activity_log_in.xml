@@ -4,47 +4,156 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Acticites.Rigesteration.LogInActivity"
-    android:background="@drawable/login">
+    android:background="@drawable/loginsss"
+    tools:context=".Acticites.Rigesteration.LogInActivity">
 
-    <EditText
-        android:id="@+id/password_txt"
-        android:layout_width="181dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="368dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="244dp"
+        android:layout_height="63dp"
+        android:layout_margin="70dp"
+        app:boxStrokeColor="#000000"
+        app:hintEnabled="false"
+        app:hintTextColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.617"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black">
 
-    <EditText
-        android:id="@+id/phoneNumber_txt"
-        android:layout_width="181dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="444dp"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="textPersonName"
+        <EditText
+            android:id="@+id/password_edt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="10sp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="18sp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="244dp"
+        android:layout_height="63dp"
+        android:layout_margin="70dp"
+        app:boxStrokeColor="#000000"
+        app:hintEnabled="false"
+        app:hintTextColor="#000000"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.617"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393"
+        app:passwordToggleTint="@color/black">
+
+        <EditText
+            android:id="@+id/phoneNumber_txt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00FFFFFF"
+            android:drawableLeft="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="10sp"
+            android:ems="10"
+            android:hint="Phone Number"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/login_btn"
-        android:layout_width="143dp"
-        android:layout_height="78dp"
-        android:layout_marginBottom="216dp"
-        android:background="#00FFFFFF"
-        android:fontFamily="@font/averia_gruesa_libre"
-        android:onClick="login_btn_OnClick"
-        android:text="LogIn"
-        app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent" />
+                android:id="@+id/login_btn"
+                android:layout_width="155dp"
+                android:layout_height="47dp"
+                android:background="@drawable/button_box"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:onClick="login_btn_OnClick"
+                android:text="LogIn"
+                app:backgroundTint="#3A3D49"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.527"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.725" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="140dp"
+                android:layout_height="53dp"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:gravity="center_horizontal"
+                android:text="LogIn"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.312" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="163dp"
+                android:layout_height="38dp"
+                android:text="Rmember Me."
+                android:textColor="#3A3D49"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.334"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.617" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="157dp"
+                android:layout_height="30dp"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:gravity="center_horizontal"
+                android:text="New to Farha ?"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.185"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.883" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="207dp"
+                android:layout_height="64dp"
+                android:background="#00FFFFFF"
+                android:fontFamily="@font/averia_gruesa_libre"
+                android:text="Create an account"
+                app:backgroundTint="#00FFFFFF"
+                app:iconTint="#00000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.794"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.896" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="269dp"
+                android:layout_height="184dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.028"
+                app:srcCompat="@drawable/farha" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

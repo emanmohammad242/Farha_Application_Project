@@ -13,6 +13,8 @@ public class product {
     private String productImageId3;
     private String category ;
 
+    private String user_id , invitation_id, name;
+
     public product() { }
 
     public product(int id, String productName, String productPric, String productColor, int productToken, String productSize, String productImageId, String productImageId2, String productImageId3, String category) {
@@ -26,6 +28,23 @@ public class product {
         this.productImageId2 = productImageId2;
         this.productImageId3 = productImageId3;
         this.category = category;
+    }
+
+
+    public product(int id, String productName, String productPric, String productColor, int productToken, String productSize, String productImageId, String productImageId2, String productImageId3, String category, String user_id, String invitation_id) {
+        this.id = id;
+        this.productName = productName;
+        this.productPric = productPric;
+        this.productColor = productColor;
+        this.productToken = productToken;
+        this.productSize = productSize;
+        this.productImageId = productImageId;
+        this.productImageId2 = productImageId2;
+        this.productImageId3 = productImageId3;
+        this.category = category;
+        this.user_id = user_id;
+        this.invitation_id = invitation_id;
+
     }
 
     public int getId() {
@@ -106,6 +125,30 @@ public class product {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getInvitation_id() {
+        return invitation_id;
+    }
+
+    public void setInvitation_id(String invitation_id) {
+        this.invitation_id = invitation_id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

@@ -30,7 +30,7 @@ public class ViewAccountActivity extends AppCompatActivity {
 
     private List<user> users=new ArrayList<>();
     RecyclerView recyclerView;
-    String url = "http://192.168.1.114:84/rest/getUserInformation.php";
+
     Button back_btn;
 
 
@@ -46,10 +46,8 @@ public class ViewAccountActivity extends AppCompatActivity {
     }
 
     private void loadData() {
-
-
-
         // output = (TextView) findViewById(R.id.jsonData);
+        String url = "http://172.19.29.67:84/rest/getUserInformation.php";
         JsonObjectRequest jor = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override

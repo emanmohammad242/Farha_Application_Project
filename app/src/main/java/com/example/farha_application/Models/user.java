@@ -7,6 +7,7 @@ public class user {
     String phoneNumber;
     String address;
     String type;
+    int balance;
 
     public user() {}
 
@@ -16,6 +17,7 @@ public class user {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.type = type;
+
     }
 
     public int getId() {
@@ -56,6 +58,14 @@ public class user {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     @Override

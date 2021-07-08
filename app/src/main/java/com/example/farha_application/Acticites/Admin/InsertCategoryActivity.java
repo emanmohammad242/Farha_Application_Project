@@ -42,7 +42,7 @@ public class InsertCategoryActivity extends AppCompatActivity {
     {
 
 
-        String restUrl = "http://192.168.1.114:84/rest/addCategory.php";
+        String restUrl = "http://172.19.29.67:84/rest/addCategory.php";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {

@@ -1,8 +1,10 @@
 package com.example.farha_application.Models;
 
 public class category {
-    private String name_cat , image_name ;
     private int num_ofProducts , id ;
+    private String name_cat , image_name ;
+
+    private String user_id , invitation_id;
 
     public category() { }
 
@@ -12,7 +14,19 @@ public class category {
         this.image_name = image_name;
         this.num_ofProducts = num_ofProducts;
     }
-    public category(int id,String name_cat, String image_name) {
+
+    public category(int id,String name_cat, String image_name, int num_ofProducts,  String user_id, String invitation_id) {
+        this.name_cat = name_cat;
+        this.image_name = image_name;
+        this.num_ofProducts = num_ofProducts;
+        this.id = id;
+        this.user_id = user_id;
+        this.invitation_id = invitation_id;
+
+    }
+
+
+    public category(int id, String name_cat, String image_name) {
         this.id = id;
         this.name_cat = name_cat;
         this.image_name = image_name;
@@ -49,6 +63,22 @@ public class category {
 
     public void setNum_ofProducts(int num_ofProducts) {
         this.num_ofProducts = num_ofProducts;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public String getInvitation_id() {
+        return invitation_id;
+    }
+
+    public void setInvitation_id(String invitation_id) {
+        this.invitation_id = invitation_id;
     }
 
 

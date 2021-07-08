@@ -35,9 +35,10 @@ public class ProductListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_list);
-        cat=getIntent().getStringExtra("cat");
+        Intent intent = new Intent();
+        cat=intent.getStringExtra("cat");
 
-        String url = "http://192.168.1.114:84/rest/getProduct.php?cat="+cat;
+        String url = "http://172.19.29.67:84/rest/getProduct.php?cat="+"toys";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {

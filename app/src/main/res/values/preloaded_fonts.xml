@@ -3,7 +3,12 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/</item>
         <item>@font/abril_fatface</item>
+        <item>@font/acme</item>
+        <item>@font/alex_brush</item>
+        <item>@font/allerta</item>
+        <item>@font/allura</item>
         <item>@font/amaranth</item>
+        <item>@font/amita</item>
         <item>@font/averia_gruesa_libre</item>
         <item>@font/baloo_bhai</item>
         <item>@font/candal</item>

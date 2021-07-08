@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.farha_application.Acticites.Users.HomeActivity;
 import com.example.farha_application.R;
 
 import java.io.BufferedReader;
@@ -60,7 +62,15 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void register_btn_OnClick(View view)
     {
-        String URL = "http://192.168.1.114:84/rest/addusers.php";
+        fullName=fullName_txt.getText().toString();
+        phoneNumber=phoneNumber_txt.getText().toString();
+        emailAddress=emailAddress_txt.getText().toString();
+        password=password_txt.getText().toString();
+        repeatPassword=repeatPassword_txt.getText().toString();
+        address=address_txt.getText().toString();
+
+
+        String URL = "http://172.19.29.6784/rest/addusers.php";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -72,7 +82,9 @@ public class RegisterActivity extends AppCompatActivity {
         } else{
             SendPostRequest runner = new SendPostRequest();
             runner.execute(URL);
+
         }
+
     }
 
     private String processRequest(String restUrl) throws UnsupportedEncodingException {
@@ -85,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
         repeatPassword=repeatPassword_txt.getText().toString();
         address=address_txt.getText().toString();
         String data=null;
-   //  if(fullName!=null&&phoneNumber!=null&&emailAddress!=null&&password!=null&&repeatPassword!=null&&address!=null&&password==repeatPassword) {
+
          data = URLEncoder.encode("name", "UTF-8")
                  + "=" + URLEncoder.encode(fullName, "UTF-8");
 
@@ -174,11 +186,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-        text.setText(s+"h");
-        if(s.equals("New record created successfully"))
-        {
-
-        }
+            Intent intent = new Intent(RegisterActivity.this, LogInActivity.class);
+            startActivity(intent);
         }
     }
 }

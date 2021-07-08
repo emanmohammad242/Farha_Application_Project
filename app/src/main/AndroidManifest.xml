@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -13,16 +14,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Farha_Application">
-        <activity android:name=".Acticites.Invitation.DetailsProductActivity">
+        <activity android:name=".Acticites.Invitation.DescriptionActivity">
 
         </activity>
+        <activity android:name=".Acticites.Rigesteration.WelcomeActivity"></activity>
+        <activity android:name=".Acticites.Invitation.CreatInvitationActivity">
+
+        </activity>
+        <activity android:name=".Acticites.Invitation.InvitationDescriptionActivity" />
+        <activity android:name=".Acticites.Invitation.InvitationActivity" />
+        <activity android:name=".Acticites.Users.HomeActivity"></activity>
+        <activity android:name=".Acticites.Invitation.wallletActivity" />
+        <activity android:name=".Acticites.Invitation.FriendsListActivity" />
+        <activity android:name=".Acticites.Users.EditeInformationActivity" />
+        <activity android:name=".Acticites.Invitation.ListOfGiftActivity" />
+        <activity android:name=".Acticites.Invitation.DetailsProductActivity" />
         <activity android:name=".Acticites.Invitation.ProductInvitationActivity" />
         <activity android:name=".Acticites.Invitation.CategoeyListInvetationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".Acticites.Admin.ViewAccountActivity" />
@@ -32,9 +40,13 @@
         <activity android:name=".Acticites.Admin.InsertCategoryActivity" />
         <activity android:name=".Acticites.Admin.ProductListActivity" />
         <activity android:name=".Acticites.Admin.CategoryListActivity" />
-        <activity android:name=".Acticites.Admin.HomeAdminActivity" />
-        <activity android:name=".Acticites.Rigesteration.LogInActivity" >
+        <activity android:name=".Acticites.Admin.HomeAdminActivity"></activity>
+        <activity android:name=".Acticites.Rigesteration.LogInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".Acticites.Rigesteration.RegisterActivity" />
         <activity android:name=".Acticites.MainActivity" />

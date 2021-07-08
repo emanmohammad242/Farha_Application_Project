@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.farha_application.Acticites.Invitation.InvitationActivity;
+import com.example.farha_application.Models.Invitation;
 import com.example.farha_application.Models.category;
 import com.example.farha_application.Models.user;
 import com.example.farha_application.R;
@@ -28,7 +30,7 @@ public class Adapter_ViewAccount extends RecyclerView.Adapter<Adapter_ViewAccoun
         this.users = users;
     }
 
-    public Adapter_ViewAccount() {}
+    public Adapter_ViewAccount(InvitationActivity invitationActivity, List<Invitation> invitationslist, String id) {}
 
 
     @NonNull

@@ -34,7 +34,7 @@ public class CategoryListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_list);
-        String url = "http://192.168.1.114:84/rest/getCategory.php";
+        String url = "http://172.19.29.67:84/rest/getCategory.php";
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.INTERNET)
                 != PackageManager.PERMISSION_GRANTED) {

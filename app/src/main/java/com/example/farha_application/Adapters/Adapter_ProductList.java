@@ -62,7 +62,7 @@ public class Adapter_ProductList  extends RecyclerView.Adapter<Adapter_ProductLi
         CardView cardView=holder.cardView;
 
         ImageView image = cardView.findViewById(R.id.imageView);
-        Picasso.get().load(pro.getProductImageId()).into(image);
+        Picasso.get().load(pro.getProductImageId2()).into(image);
 
         TextView txt = cardView.findViewById(R.id.text);
         txt.setText(pro.getProductName());
@@ -96,7 +96,7 @@ public class Adapter_ProductList  extends RecyclerView.Adapter<Adapter_ProductLi
                                       {
                                           @Override
                                           public void onClick(View v) {
-                                              String restUrl = "http://192.168.1.114:84/rest/deleteProduct.php";
+                                              String restUrl = "http://172.19.29.67:84/rest/deleteProduct.php";
                                               ids=pro.getId()+"";
                                               if (ContextCompat.checkSelfPermission(context, Manifest.permission.INTERNET)
                                                       != PackageManager.PERMISSION_GRANTED) {
@@ -112,12 +112,6 @@ public class Adapter_ProductList  extends RecyclerView.Adapter<Adapter_ProductLi
                                           }
                                       }
         );
-
-
-
-
-
-
     }
 
     @Override

@@ -60,6 +60,7 @@ public class Adapter_ProductListInvitation extends RecyclerView.Adapter<Adapter_
 
                 Intent intent =new Intent(context, DetailsProductActivity.class);
                 String id =pro.getId()+"";
+                int i = pro.getProductToken();
                 intent.putExtra("product_id",id);
                 intent.putExtra("product_name",pro.getProductName());
                 intent.putExtra("product_imageId1",pro.getProductImageId());
@@ -69,6 +70,8 @@ public class Adapter_ProductListInvitation extends RecyclerView.Adapter<Adapter_
                 intent.putExtra("product_color",pro.getProductColor());
                 intent.putExtra("product_size",pro.getProductSize());
                 intent.putExtra("product_token",pro.getProductToken());
+                intent.putExtra("invitation_id",pro.getInvitation_id());
+                intent.putExtra("user_id",pro.getUser_id());
                 context.startActivity(intent);
 
             }

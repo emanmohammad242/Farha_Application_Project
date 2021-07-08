@@ -56,6 +56,8 @@ public class Adapter_CategoryListInvitation extends RecyclerView.Adapter<Adapter
 
                 Intent intent =new Intent(context, ProductInvitationActivity.class);
                 intent.putExtra("cat",cat.getName_cat());
+                intent.putExtra("invitation_id",cat.getInvitation_id());
+                intent.putExtra("user_id",cat.getUser_id());
                 context.startActivity(intent);
 
             }
